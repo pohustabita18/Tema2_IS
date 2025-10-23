@@ -1,0 +1,49 @@
+Factory Method permite ca o clasă să delege crearea obiectelor către subclase.
+Clasa de bază definește o interfață pentru crearea obiectelor, dar subclasele decid ce tip concret de obiect va fi creat.
+Când se folosește:
+
+      - Când vrei ca subclasele să decidă ce obiect să creeze.
+      - Când nu vrei ca programul să depindă direct de clase concrete.
+      - Când ai nevoie de o ierarhie de produse similare.
+
+Avantaje:
+    - Elimină dependența de clase concrete.
+    - Facilitează extinderea (poți adăuga tipuri noi fără să modifici codul existent).
+
+Abstract Factory
+    Abstract Factory oferă o interfață pentru crearea de familii de obiecte corelate 
+(de exemplu, butoane, meniuri, ferestre), fără a specifica clasele lor concrete.
+Când se folosește:
+        - Când ai nevoie să creezi familii de obiecte compatibile.
+        - Când vrei să schimbi ușor între diferite „familii” (ex: Windows, macOS).
+        - Când vrei coerență între produse (toate elementele UI arată la fel).
+Avantaje:
+  - Asigură consistență între obiectele care lucrează împreună.
+  - Permite schimbarea ușoară a familiei de produse.
+
+Builder
+
+Builder permite construirea treptată (pas cu pas) a obiectelor complexe, separând procesul de creare de structura finală a obiectului.
+Când se folosește:
+    - Când vrei să construiești obiecte complexe pas cu pas.
+    - Când același proces poate genera produse diferite (ex: mașină sport vs. camion).
+    - Când vrei să separi logica de construire de reprezentarea finală.
+
+Avantaje:
+   - Simplifică crearea obiectelor mari și complexe.
+   - Face codul mai clar și mai ușor de extins.
+
+     Da, aceste pattern-uri se pot combina:
+Abstract Factory + Builder:
+Abstract Factory poate alege ce tip de builder să folosească (ex: SportsCarBuilder sau TruckBuilder).
+Factory Method + Builder:
+Factory Method poate decide ce builder să creeze în funcție de context (de exemplu, dacă utilizatorul alege tipul de mașină).
+Abstract Factory intern folosește Factory Method:
+În implementarea unei fabrici abstracte, metodele pot fi de tip factory method pentru a decide cum se creează obiectele.
+
+      În concluzie, toate cele trei modele fac parte din categoria Creational Patterns, dar fiecare servește unui scop diferit:
+
+Factory Method — simplifică decizia privind tipul de obiect creat.
+Abstract Factory — asigură consistență între mai multe obiecte compatibile.
+Builder — controlează procesul de construire al unui obiect complex.
+Împreună, aceste pattern-uri contribuie la un cod mai modular, extensibil și ușor de întreținut.
